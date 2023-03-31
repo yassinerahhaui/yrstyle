@@ -1,0 +1,37 @@
+@import '../../scss/variables';
+
+@mixin carousel-btn($left: none,$right: none) {
+  font-size: rem(40);
+  position: absolute;
+  top: 50%;
+  left: $left;
+  right: $right;
+  transform: translateY(-50%);
+  color: #00000073;
+  text-shadow: 0 0 rem(2) #ffffff,0 0 rem(2) #ffffff;
+  cursor: pointer;
+  &:hover {
+    color: #000000;
+  }
+}
+.box {
+  width: 100vw;
+  overflow-x: hidden;
+  
+  &_left {
+    @include carousel-btn(rem(10));
+  }
+  &_right {
+    @include carousel-btn(none,rem(10));
+  }
+}
+.carousel {
+  width: 100vw;
+  overflow-x: hidden;
+  &-box {
+    position: relative;
+    left: 0;
+    width: max-content;
+    transition: left .5s ease-in;
+  }
+}

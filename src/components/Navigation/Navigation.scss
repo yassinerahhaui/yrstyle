@@ -1,0 +1,124 @@
+@import '../../scss/variables';
+
+.nav_toolbar {
+  width: 100%;
+  height: rem(60);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 rem(40);
+  background-color: $primary;
+  box-shadow: 0 0 rem(2) $primary, 0 0 rem(2) $primary;
+  @media(max-width: $sm) {
+    padding: 0 rem(20);
+  }
+  &_start {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    &_menu {
+      font-size: rem(23);
+      color: $light;
+      padding: rem(7) rem(10) rem(5) rem(10);
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      &:hover {
+        background-color: #0000000e;
+      }
+      @media(max-width: $sm) {
+        display: block;
+      }
+    }
+    img {
+      width: rem(70);
+    }
+  }
+  &_end {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    @media(max-width: $sm) {
+      display: none;
+    }
+    a {
+      position: relative;
+      padding: rem(10) 0;
+      margin-inline: rem(5);
+      font: {
+        size: rem(16);
+        weight: 600;
+      }
+      color: $light;
+      text-decoration: none;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        border: rem(2) solid $primary;
+        border-radius: rem(20);
+        transition: width .5s ease-in-out;
+      }
+      &:hover {
+        color: $warning;
+        &::after {
+          border-color: $dark;
+          width: 100%;
+        }
+      }
+      &.active {
+        color: $warning;
+        &::after {
+          border-color: $dark;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.nav_list {
+  width: rem(250);
+  position: fixed;
+  top: 0;
+  left: rem(-250);
+  bottom: 0;
+  background-color: #eeeeee;
+  box-shadow: 0 0 rem(4) #cccccc,0 0 rem(4) #cccccc;
+  z-index: 1000;
+  display: none;
+  transition: left .5s ease-in-out;
+  &_link {
+    display: flex;
+    width: 100%;
+    height: rem(40);
+    align-items: center;
+    padding: rem(0) rem(30);
+    text-decoration: none;
+    color: $dark;
+
+    font: {
+      size: rem(16);
+      weight: 700;
+    }
+    &:hover {
+      background-color: #cccccc;
+    }
+    &.active {
+      background-color: $primary;
+      color: $light;
+      border-bottom: rem(2) solid $dark;
+    }
+  }
+}
+.nav_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  background-color: #000000b4;
+  z-index: 999;
+}
