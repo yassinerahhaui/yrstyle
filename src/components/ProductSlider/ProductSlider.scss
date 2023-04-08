@@ -1,0 +1,23 @@
+@import '../../scss/variables';
+.product-slider {
+  width: 100%;
+  overflow-x: hidden;
+  &_box {
+    width: max-content !important;
+    position: relative;
+    left: 0;
+    min-width: 100%;
+    text-align: center !important;
+  }
+}
+.product-box {
+  width: 100%;
+  position: relative;
+  &_left {
+    @include carousel-btn(rem(30));
+  }
+
+  &_right {
+    @include carousel-btn(none, rem(10));
+  }
+}

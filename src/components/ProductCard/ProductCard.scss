@@ -1,0 +1,44 @@
+@import '../../scss/variables';
+.product-card {
+  width: rem(200);
+  float: left;
+  margin-inline: rem(5);
+  margin-top: rem(20);
+  cursor: pointer;
+  img {
+    width: 100%;
+    height: rem(200);
+    color: $light;
+    font: {
+      size: rem(30);
+      weight: 700;
+    }
+    text-align: center;
+    background-color: #00000086;
+    border-radius: rem(20);
+    box-shadow: 0 0 rem(4) $dark, 0 0 rem(4) $dark;
+  }
+  &_caption {
+    width: 100%;
+    overflow-x: hidden;
+    padding-inline: rem(5);
+    &_title {
+      text-align: center;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font: {
+        size: rem(16);
+        weight: 600;
+      }
+    }
+    &_price {
+      text-align: center;
+      font: {
+        size: rem(16);
+        weight: 600;
+      }
+    }
+  }
+}

@@ -10,20 +10,21 @@ const Carousel = () => {
     return data.map(x => <CarouselItem key={x.id} data={x} />)
   }
   let lft = 0
+  const chng = 100
   const backBtn = () => {
     const carouselBox = document.querySelector('.carousel-box')
-    if (lft <= -100) {
-      lft += 100
+    if (lft <= -chng) {
+      lft += chng
       carouselBox.style.left = `${lft}%`
     } else {
-      lft = -400
+      lft = -chng * 4
       carouselBox.style.left = `${lft}%`
     }
   }
   const nextBtn = () => {
     const carouselBox = document.querySelector('.carousel-box')
-    if (lft >= -300) {
-      lft -= 100
+    if (lft >= -chng * 3) {
+      lft -= chng
       carouselBox.style.left = `${lft}%`
     } else {
       lft = 0
@@ -33,9 +34,9 @@ const Carousel = () => {
   useEffect(() => {
     let val = setInterval(() => {
       const carouselBox = document.querySelector('.carousel-box')
-      if (lft >= -300) {
+      if (lft >= -chng*3) {
         carouselBox.style.transition = 'left .5s ease-in'
-        lft -= 100
+        lft -= chng
         carouselBox.style.left = `${lft}%`
       } else {
         carouselBox.style.transition = 'none'

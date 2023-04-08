@@ -1,37 +1,47 @@
 @import '../../scss/variables';
 
-@mixin carousel-btn($left: none,$right: none) {
-  font-size: rem(40);
-  position: absolute;
-  top: 50%;
-  left: $left;
-  right: $right;
-  transform: translateY(-50%);
-  color: #00000073;
-  text-shadow: 0 0 rem(2) #ffffff,0 0 rem(2) #ffffff;
-  cursor: pointer;
-  &:hover {
-    color: #000000;
-  }
-}
+
+
 .box {
   width: 100vw;
-  overflow-x: hidden;
-  
-  &_left {
-    @include carousel-btn(rem(10));
+  position: relative;
+  max-height: 80vh;
+  overflow: hidden;
+  margin-top: rem(5);
+  border-radius: rem(50);
+  border-top-left-radius: rem(150);
+  border-top-right-radius: rem(100);
+  border-bottom-right-radius: rem(250);
+  border-bottom-left-radius: rem(350);
+  border-left: rem(15) solid $dark;
+  border-top: rem(10) solid $primary;
+  border-right: rem(15) solid $dark;
+  border-bottom: rem(10) solid $primary;
+  box-shadow: 0 0 rem(4) $dark, 0 0 rem(4) $dark;
+  background-color: $primary;
+  @media(max-width: $sm) {
+    border-top-left-radius: rem(50);
+    border-top-right-radius: rem(15);
+    border-bottom-right-radius: rem(25);
+    border-bottom-left-radius: rem(35);
   }
+
+  &_left {
+    @include carousel-btn(rem(30));
+  }
+
   &_right {
-    @include carousel-btn(none,rem(10));
+    @include carousel-btn(none, rem(10));
   }
 }
+
 .carousel {
   width: 100vw;
   overflow-x: hidden;
+
   &-box {
     position: relative;
     left: 0;
     width: max-content;
-    transition: left .5s ease-in;
   }
 }

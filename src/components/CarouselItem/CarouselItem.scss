@@ -6,7 +6,7 @@
   position: relative;
   &_image {
     width: 100%;
-    max-height: 90vh;
+    max-height: 80vh;
   }
   &_caption {
     position: absolute;
@@ -16,6 +16,7 @@
     color: $primary;
     text-shadow: 0 0 rem(4) $dark, 0 0 rem(4) $dark;
     text-align: center;
+    
     &_title {
       font: {
         size: 5vmax;
@@ -28,6 +29,19 @@
         size: rem(20);
         weight: 600;
         style: italic;
+      }
+    }
+    @media(max-width: $sm) {
+      &_title {
+        font: {
+          size: rem(25);
+        }
+      }
+      &_description {
+        font: {
+          size: rem(15);
+          weight: 500;
+        }
       }
     }
   }
